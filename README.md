@@ -1,0 +1,3 @@
+# Book-Reviews-Sentimental analysis
+
+In This project the user reviews can automatically summarize those reviews into a positive or a negative category to give useful information to the user. This task of classification of reviews by identifying the opinions of various users is formally known as Opinion Mining or Sentimental Analysis Sentimental analysis may be defined as the classification of a text or document into a positive or a negative class by judging the connotation contained in the text. A positive opinion expressing text is assigned a positive label whereas a negative label denotes a negative opinion. Any objective opinion would be assigned a neutral label.
