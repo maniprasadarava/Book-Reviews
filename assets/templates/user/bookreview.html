@@ -1,0 +1,72 @@
+{% extends 'userbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4>Search</h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+
+                               <h2 style="color:white">View users details </h2>
+                            <table border="2px solid blue" align="left">
+                                  <tr><th style="color:red">bookname</th>
+                                    <th style="color:red">booktype</th>
+                                    <th style="color:red">bookprice</th>
+                                    <th style="color:red">bookrating</th>
+                                    <th style="color:red">bookreview</th>
+
+                                  </tr>
+
+
+                                    {% for x in qs %}
+                                    <tr><th style="color:white">{{x.bookname}}</th>
+                                    <th style="color:white">{{x.booktype}}</th>
+                                    <th style="color:white">{{x.bookprice}}</th>
+                                    <th style="color:white">{{x.rating}}</th>
+                                    <th style="color:white">{{x.review}}</th>
+                                    </tr>
+                                {% endfor%}
+                               <tr><th style="color:red">semantic:</th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <td style="color:white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{sem}}</td></tr>
+                            </table>
+
+
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table border="2px solid red" align="right">
+                                <tr><th style="color:orange">+ve reviews</th></tr>
+
+                                {% for i in dict %}
+                                <tr><th style="color:white">{{i}}</th>
+                                {% endfor %}
+                                </tr>
+                            </table>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<table border="2px solid red" align="right" >
+                                <tr><th style="color:orange">-ve reviews</th></tr>
+
+                                {% for j in dict1 %}
+                                <tr><th style="color:white">{{j}}</th>
+                                {% endfor %}
+                                </tr>
+                            </table>
+                                <!--<p>of Book Reviews using Unsupervised Semantic Orientation and Supervised Machine Learning Approaches</p>-->
+                            </div><!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}

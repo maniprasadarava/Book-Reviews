@@ -1,0 +1,67 @@
+{% extends 'userbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4></h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+
+                                <form action="{% url 'viewdetails' %}" method="POST" enctype="multipart/form-data"  >
+    {% csrf_token %}
+        <table align="center" style="margin-top:10px;">
+                    <tr>
+
+                        <td colspan="3" align="center">
+                            <img src="{{image.url}}" style="width:25em;height:25em;">
+
+                        </td>
+                        <!--<tr><td style="color:black">Category</td>
+                        <td style="color:black">:</td>
+                        <td height="30px" style="color:black">{{adds.file}}</td></tr>-->
+                        <tr><td style="color:white">bookname</td>
+                        <td style="color:white">:</td>
+                        <td height="30px" style="color:white">{{books.bookname}}</td></tr>
+                        <tr><td style="color:white">book genere</td>
+                        <td style="color:white">:</td>
+                        <td height="30px" style="color:white">{{books.booktype}}</td></tr>
+                        <tr><td style="color:white">bookPrice</td>
+                        <td style="color:white">:</td>
+                        <td height="30px" style="color:white">{{books.bookprice}}</td></tr>
+                        <tr><td style="color:white">Rating</td>
+                        <td style="color:white">:</td>
+                        <td height="30px" style="color:white">{{books.rating}}</td></tr>
+                        <tr><td style="color:white">Review</td>
+                        <td style="color:white">:</td>
+                         <td height="30px" style="color:white">{{books.review}}</td></tr>
+                    </tr>
+            <tr>
+        <td  align="center"><input style="color:black" type="submit" name="submit"  ></td>
+    </tr>
+                </table>
+</form>
+
+
+                                <!--<p>of Book Reviews using Unsupervised Semantic Orientation and Supervised Machine Learning Approaches</p>-->
+                            </div><!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}

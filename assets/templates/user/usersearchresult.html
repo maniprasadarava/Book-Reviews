@@ -1,0 +1,38 @@
+{% extends 'userbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4></h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+
+                                {% for x in object %}
+                                    <table><tr>
+                                        <td colspan="3"><a href="/viewdetails/?id={{x.id}}&filename={{x.filename}}&filetype={{x.filetype}}&fileprice={{x.fileprice}}" style="color:black"><img src="{{x.file.url}}"  style="width:20em;height:20em;"></a></td><br>
+                                    </table>
+                                {% endfor %}
+
+                                <!--<p>of Book Reviews using Unsupervised Semantic Orientation and Supervised Machine Learning Approaches</p>-->
+                            </div><!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}

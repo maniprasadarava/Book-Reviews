@@ -1,0 +1,52 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4>User Login</h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+
+                            <form action="/userregister/" method="POST">
+                                    {% csrf_token %}
+                                    <table>
+                                          <tr><td style="color:white">Login name</td><td >{{form.name}}</td></tr>
+                                            <tr><td style="color:white">Password</td><td>{{form.passwd}}</td></tr>
+                                            <tr><td style="color:white">confirmPassword</td><td>{{form.cwpasswd}}</td></tr>
+                                            <tr><td style="color:white">Email</td><td>{{form.mail}}</td></tr>
+                                            <tr><td style="color:white">Mobile</td><td>{{form.mobileno}}</td></tr>
+                                            <tr><td style="color:white">qualification</td><td>{{form.qualification}}</td></tr>
+                                            <tr><td></td><td style="color:white">{{form.status}}</td></tr>
+                                    </table>
+                                <input type="submit" value="submit">
+
+                                </form>
+
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+                                <!--<p>of Book Reviews using Unsupervised Semantic Orientation and Supervised Machine Learning Approaches</p>-->
+                            </div><!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}

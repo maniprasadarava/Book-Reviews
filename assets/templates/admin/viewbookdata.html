@@ -1,0 +1,50 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4>View Book details</h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                              <table border="2px solid blue" align="center">
+                                <thead>
+                                  <tr>
+                                    <th style="color:violet">bookname</th>
+                                    <th style="color:violet">bookdegenere</th>
+                                    <th style="color:violet">bookprice</th>
+                                    <th style="color:violet">book</th>
+                                  </tr>
+                                </thead>
+                                  {% for i in qs %}
+                                    <tr>
+                                        <td style="color:orange">{{ i.filename }}</td>
+                                        <td style="color:orange">{{ i.filetype }}</td>
+                                        <td style="color:orange">{{ i.fileprice }}</td>
+                                        <td style="color:orange"><img src="{{i.file.url}}" style="width:10em;height:10em;">
+                                      </td>
+                                    </tr>
+                                  {% endfor %}
+                                </tbody>
+                              </table>
+
+                            <!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}

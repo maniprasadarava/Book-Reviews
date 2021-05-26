@@ -1,0 +1,46 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4>BookVendor Login</h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+
+
+                                <form action="{% url 'vendorlogincheck' %}" method="POST">
+                                 {% csrf_token %}
+                                <table><tr><td style="color:white">
+                                UserName  <input  type="text" name="uname" placeholder="USER Login" ><br/><br/>
+                                Password <input  type="password" name="upasswd" placeholder="Password" ><br/><br/>
+                                    </td></tr></table> <button  type="submit" style="color:#FF4500">Login</button><br/>
+                                    <br><br><p style="color:white"> New Customer Register Here ?<a href="{% url 'vendorregister' %}" style="color:white">Click Here register</a></p>
+                            </form> </h3>
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <font color='darkred'> {{ message }}</font>
+                                {% endfor %}
+                            {% endif %}
+                                <!--<p>of Book Reviews using Unsupervised Semantic Orientation and Supervised Machine Learning Approaches</p>-->
+                            </div><!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}

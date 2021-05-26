@@ -1,0 +1,61 @@
+{% extends 'adminbase.html'%}
+{% load static %}
+{% block contents %}
+
+
+ <div class="hero-content-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="hero-content-wrap flex flex-column justify-content-center align-items-start">
+                            <header class="entry-header">
+                                <h4>View users details</h4>
+                                <!--<h3>BookVendor <br/>Login</h3>-->
+                            </header><!-- .entry-header -->
+
+                            <div class="entry-content">
+                                <table border="2px solid blue" align="center">
+                                  <tr><th style="color:orange">Name</th>
+                                    <th style="color:orange">Mail</th>
+                                    <th style="color:orange">Passwd</th>
+                                    <th style="color:orange">CWPasswd</th>
+                                    <th style="color:orange">Location</th>
+                                    <th style="color:orange">Mobileno</th>
+                                    <th style="color:orange">Status</th>
+                                    <th style="color:orange">Activate</th>
+                                  </tr>
+
+                              {% for x in qs %}
+                                  <tr>
+                                    <td style="color:white">{{x.name}}</td>
+                                    <td style="color:white">{{x.mail}}</td>
+                                    <td style="color:white">{{x.passwd}}</td>
+                                    <td style="color:white">{{x.cwpasswd}}</td>
+                                    <td style="color:white">{{x.location}}</td>
+                                    <td style="color:white">{{x.mobileno}}</td>
+                                    <td style="color:white">{{x.status}}</td>
+
+                                    {% if x.status == 'waiting' %}
+                                    <td> <a href="/activatevendor/?pid={{ x.id }}" style="color:blue">Activate</a></td>
+                                    {% else %}
+                                            <td> Activated</td>
+                                            {% endif %}
+
+                                     </tr>
+                                    {% endfor %}
+
+                            </table>
+                            </div><!-- .entry-content -->
+
+                            <!--<footer class="entry-footer read-more">
+                                <a href="#">read more</a>
+                            </footer>--><!-- .entry-footer -->
+                        </div><!-- .hero-content-wrap -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .hero-content-hero-content-overlay -->
+    </div><!-- .hero-content -->
+
+
+{% endblock %}
